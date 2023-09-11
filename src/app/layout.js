@@ -1,17 +1,21 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
-const inter = Inter({ subsets: ['latin'] })
+config.autoAddCss = false
 
 export const metadata = {
-  title: 'ForeFlight - Flight Conditions ',
+  title: 'ForeFlight - Flight Conditions',
   description: 'Foreflight coding challenge. Code developed by Melissa Gil',
+  icons: {
+    icon: '/ForeFlight-icon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

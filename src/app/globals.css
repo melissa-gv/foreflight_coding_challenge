@@ -1,52 +1,139 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --border-radius: 5px;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 25, 35, 43;
+  --dark-accent-rgb: 13, 19, 28;
+  --light-accent-rgb: 38, 131, 214;
+  --grey-rgb: 180, 180, 180;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 2, 73, 159;
-  }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rem;
+  gap: 2rem;
+  font-family: var(--font-figtree) !important;
+  max-width: 1000px;
+  min-width:  500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  width: 100%;
 }
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-rgb));
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1, h2, h3 {
+  font-family: var(--font-ubuntu) !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+
+h2, h3 {
+  font-weight: 300;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  height: 3rem;
+}
+
+input[type=text] {
+  color: rgb(var(--dark-accent-rgb));
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-figtree);
+  font-size: 1rem;
+  height: 2rem;
+  padding: .25rem;
+  width: 15rem;
+}
+
+input[type=text]::placeholder {
+  color: rgb(var(--background-rgb));
+  font-family: var(--font-figtree);
+  color: var(--grey-rgb);
+}
+
+button {
+  background-color: rgb(var(--light-accent-rgb));
+  color: rgb(var(--foreground-rgb));
+  width: 3rem;
+  height: 40px;
+  padding: .25rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(var(--dark-accent-rgb));
+}
+
+ul {
+  list-style-type: none; 
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.225);
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+  font-family: var(--font-ubuntu);
+  background-color: rgb(var(--dark-accent-rgb));
+  color: rgb(var(--grey-rgb));
+}
+
+tr:hover {
+  background-color: coral;
+}
+
+.search-heading {
+  display: inline-block;
+}
+
+
+
+.best-runway {
+  font-style: italic;
+  color: rgb(var(--light-accent-rgb));
+}
+
+.set-first-col-width {
+  width: 40%;
+}
+
+
+
+.airport-name-header {
+  color: rgb(var(--light-accent-rgb));
+  font-size: 1.25rem;
+}
+
+.error-fetching-data {
+  color: red;
+  font-style: italic;
+  font-size: 1.25rem;
 }
