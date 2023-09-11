@@ -24,7 +24,7 @@ export default function SearchAirport({ airportIDs, setAirportIDs, setAirportDat
             name="airportIDinput"
             value={airportIDs}
             onChange={e => setAirportIDs(e.target.value)}
-            placeholder='Enter airport identifier'
+            placeholder='Enter airport identifier(s)'
           />
         </label>
 

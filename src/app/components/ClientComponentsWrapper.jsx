@@ -20,8 +20,6 @@ export default function ClientComponentsWrapper() {
       {
         (!airportDatas || !weatherDatas) ? null : (
           <>
-          {console.log('airportDatas:', airportDatas)}
-          {console.log('weatherDatas:', weatherDatas)}
             {
               airportDatas.map((airportData, idx) => {
                 if (airportDatas.length !== weatherDatas.length) {
